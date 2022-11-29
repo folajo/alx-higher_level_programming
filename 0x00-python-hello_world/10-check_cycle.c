@@ -4,15 +4,13 @@
 
 /**
 
- * check_cycle - checks if a singly linked list has
+ * check_cycle - checks if a linked list contains a cycle
 
- * a cycle in it
+ * @list: linked list to check
 
- * @list: pointer to the list
+ *
 
- * Return: 0 if there is no cycle,
-
- * 1 if there is a cycle
+ * Return: 1 if the list has a cycle, 0 if it doesn't
 
  */
 
@@ -20,61 +18,29 @@ int check_cycle(listint_t *list)
 
 {
 
-	listint_t *p2;
+	listint_t *slow = list;
 
-	listint_t *prev;
+	listint_t *fast = list;
 
 
 
-	p2 = list;
+	if (!list)
 
-	prev = list;
+		return (0);
 
-	while (list && p2 && p2->next)
+
+
+	while (slow && fast && fast->next)
 
 	{
 
-		list = list->next;
+		slow = slow->next;
 
-		p2 = p2->next->next;
+		fast = fast->next->next;
 
-
-
-		if (list == p2)
-
-		{
-
-			list = prev;
-
-			prev =  p2;
-
-			while (1)
-
-			{
-
-				p2 = prev;
-
-				while (p2->next != list && p2->next != prev)
-
-				{
-
-					p2 = p2->next;
-
-				}
-
-				if (p2->next == list)
-
-					break;
-
-
-
-				list = list->next;
-
-			}
+		if (slow == fast)
 
 			return (1);
-
-		}
 
 	}
 
