@@ -1,1 +1,1 @@
-Second project on python
+Second project on pythoN and its cool 
