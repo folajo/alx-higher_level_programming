@@ -1,37 +1,23 @@
 #!/usr/bin/python3
 
-# Author - Folajo
-
-"""Print the numbers from 1 to 100 separated by a space.
-
-  For multiples of three, print Fizz instead of the number
-
-  For multiples of five, print Buzz instead of the number.
-
-  For multiples of three and five, print FizzBuzz instead of the number.
-
-  """
-
-
-
-
-
 def fizzbuzz():
 
-    for number in range(1, 101):
+    separator = ''
 
-        if number % 3 == 0 and number % 5 == 0:
+    for i in range(1, 101):
 
-            print("FizzBuzz ", end="")
+        if (i % 15 == 0):
 
-        elif number % 3 == 0:
+            print("{} ".format("FizzBuzz"), end='')
 
-            print("Fizz ", end="")
+        elif (i % 5 == 0):
 
-        elif number % 5 == 0:
+            print("{} ".format("Buzz"), end='')
 
-            print("Buzz ", end="")
+        elif (i % 3 == 0):
+
+            print("{} ".format("Fizz"), end='')
 
         else:
 
-            print("{} ".format(number), end="")
+            print("{} ".format(i), end='')
