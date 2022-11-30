@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 
-# Author - Folajo
+for i in range(97, 123):
 
-for letter in range(97, 123):
+    if (i != 113) and (i != 101):
 
-    if chr(letter) != 'q' and chr(letter) != 'e':
-
-        print("{}".format(chr(letter)), end="")
+        print("{}".format(chr(i)), end='')
