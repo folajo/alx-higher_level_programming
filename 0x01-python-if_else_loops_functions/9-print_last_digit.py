@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 
-# Author - Folajo
-
-
-
 def print_last_digit(number):
 
-    print(abs(number) % 10, end="")
+    if number < 0:
 
-    return (abs(number) % 10)
+        remainder = abs(number) % 10
+
+    else:
+
+        remainder = number % 10
+
+    print("{}".format(remainder), end='')
+
+    return (remainder)
