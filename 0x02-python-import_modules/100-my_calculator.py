@@ -2,46 +2,50 @@
 
 if __name__ == "__main__":
 
-    from sys import argv
+    import sys
+
+
+
+    nargs = len(sys.argv) - 1
+
+    if nargs != 3:
+
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+
+        sys.exit(1)
+
+
+
+    op = sys.argv[2]
+
+    if op != '+' and op != '-' and op != '*' and op != '/':
+
+        print("Unknown operator. Available operators: +, -, * and /")
+
+        sys.exit(1)
+
+
 
     from calculator_1 import add, sub, mul, div
 
-    argc = len(argv)
+    a = int(sys.argv[1])
 
-    if argc != 4:
+    b = int(sys.argv[3])
 
-        print('Usage: {} <a> <operator> <b>'.format(argv[0]))
 
-        exit(1)
 
-    ops = {
+    if op == '+':
 
-        '+': add,
+        print("{} + {} = {}".format(a, b, add(a, b)))
 
-        '-': sub,
+    elif op == '-':
 
-        '*': mul,
+        print("{} - {} = {}".format(a, b, sub(a, b)))
 
-        '/': div
+    elif op == '*':
 
-    }
-
-    if argv[2] in ops:
-
-        num1 = int(argv[1])
-
-        num2 = int(argv[3])
-
-        op = ops[argv[2]]
-
-        result = op(num1, num2)
-
-        print('{:d} {:s} {:d} = {:d}'.format(num1, argv[2], num2, result))
+        print("{} * {} = {}".format(a, b, mul(a, b)))
 
     else:
 
-        print('Unknown operator. Available operators: +, -, * and /')
-
-        exit(1)
-
-    exit(0)
+        print("{} / {} = {}".format(a, b, div(a, b)))
