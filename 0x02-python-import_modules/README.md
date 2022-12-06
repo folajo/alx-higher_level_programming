@@ -1,1 +1,1 @@
- This is yhe third README on Python
+ This is the third README on Python and its fun
