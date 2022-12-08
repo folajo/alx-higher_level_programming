@@ -2,10 +2,14 @@
 
 def square_matrix_simple(matrix=[]):
 
-    tmp = []
+    new_matrix = matrix.copy()
 
-    for x in matrix:
 
-        tmp.append(list(map(lambda x: x**2, x)))
 
-    return (tmp)
+    for i in range(len(matrix)):
+
+        new_matrix[i] = list(map(lambda x: x**2, matrix[i]))
+
+
+
+    return (new_matrix)
